@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>FORME render tool</title>
+<style>
+  html, body { margin: 0; background: #171a18; }
+  canvas { display: block; }
+</style>
+<script type="importmap">
+{ "imports": { "three": "../vendor/three/build/three.module.min.js" } }
+</script>
+</head>
+<body>
+<!--
+  Offline renderer for the site images.
+  Open through a local server, then call window.renderShot({...}) from the console
+  (or from tools/render_images.py, which saves every image into assets/img).
+-->
+<canvas id="c"></canvas>
+<script type="module">
+  import { createStudio } from '../js/studio.js';
+  const canvas = document.getElementById('c');
+  const studio = await createStudio({ canvas, modelUrl: '../assets/models/car-concept.glb', preserveDrawingBuffer: true, pixelRatio: 1, envSize: 512 });
+  window.studio = studio;
+
+  window.renderShot = async (cfg) => {
+    const { w = 1600, h = 1000, look = 'graphite', view = {}, inspect = null, exposure = 1, doors = 0, envVis = {}, spot = null } = cfg;
+    studio.resize(w, h);
+    studio.setLook(look, cfg.flake ?? null);
+    studio.renderer.toneMappingExposure = exposure;
+    if (inspect) studio.setInspect(inspect.angle, inspect.strength ?? 1); else studio.setInspect(0, 0);
+    studio.envScene.traverse((o) => {
+      if (!o.isMesh || ['inspect', 'spot'].includes(o.name) || !o.name) return;
+      o.visible = envVis[o.name] !== false;
+    });
+    if (spot) studio.setSpot(spot.dir, spot.intensity, spot.size); else studio.setSpot(null);
+    const door = studio.nodes('BodyDoorLColor1');
+    if (door) {
+      door.userData.rest ??= door.rotation.clone();
+      door.rotation.copy(door.userData.rest);
+      if (doors) door.rotation.z += doors * Math.PI / 180;
+    }
+    if (cfg.hideGlass !== undefined && studio.mats.glass) studio.mats.glass.opacity = cfg.hideGlass ? 0.12 : 0.62;
+    studio.rebuildEnv();
+    studio.updateShadows();
+    studio.setView(view);
+    studio.render();
+    return canvas.toDataURL('image/png');
+  };
+
+  window.probe = () => {
+    const out = { dims: studio.dims.toArray().map((v) => +v.toFixed(3)) };
+    const door = studio.nodes('BodyDoorLColor1');
+    out.door = door ? { pos: door.position.toArray(), rot: door.rotation.toArray().slice(0, 3) } : null;
+    return out;
+  };
+  window.__ready = true;
+</script>
+</body>
+</html>

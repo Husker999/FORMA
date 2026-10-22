@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FORME Automotive Detailing</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="FORME — концептуальная студия детейлинга и защиты кузова: мойка, полировка, защитные покрытия, плёнка и уход за салоном. Демонстрационный проект.">
+<meta name="theme-color" content="#171A18">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23171A18'/%3E%3Cpath d='M10 7h12v4H14v4h7v4h-7v6h-4z' fill='%23D7F36A'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="assets/img/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="FORME">
+<meta property="og:title" content="FORME — студия детейлинга и защиты кузова">
+<meta property="og:description" content="Концептуальный сайт студии: услуги с ценами «от», сравнение до/после, подбор услуги и заявка. Демонстрационный проект.">
+<meta property="og:image" content="assets/img/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Купе цвета шалфея в тёмной студии и заголовок «Поверхность решает всё.»">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="assets/fonts/RobotoFlex-subset.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="assets/fonts/GolosText-subset.woff" as="font" type="font/woff" crossorigin>
+<script>document.documentElement.classList.add('js');</script>
+<link rel="stylesheet" href="css/styles.css">
+<script type="importmap">
+{ "imports": { "three": "./vendor/three/build/three.module.min.js" } }
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Перейти к содержанию</a>
+
+<header class="site-header" data-header>
+  <div class="wrap site-header__inner">
+    <a class="brand" href="#top" aria-label="FORME, в начало страницы">
+      <span class="brand__word">FORME</span>
+      <span class="brand__desc">Detailing &amp; Protection</span>
+    </a>
+    <nav class="nav" aria-label="Разделы сайта">
+      <ul class="nav__list">
+        <li><a href="#services" data-nav>Услуги</a></li>
+        <li><a href="#compare" data-nav>До и после</a></li>
+        <li><a href="#approach" data-nav>Подход</a></li>
+        <li><a href="#works" data-nav>Работы</a></li>
+        <li><a href="#faq" data-nav>Вопросы</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--lime btn--sm site-header__cta" href="#contact">Записаться на осмотр</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+      <span class="menu-toggle__label">Меню</span>
+      <span class="menu-toggle__icon" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobile-menu" data-menu>
+  <nav class="wrap mobile-menu__inner" aria-label="Разделы сайта">
+    <ul>
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#compare">До и после</a></li>
+      <li><a href="#approach">Подход</a></li>
+      <li><a href="#works">Работы</a></li>
+      <li><a href="#finder">Подбор услуги</a></li>
+      <li><a href="#faq">Вопросы</a></li>
+    </ul>
+    <a class="btn btn--lime" href="#contact">Записаться на осмотр</a>
+  </nav>
+</div>
+
+<main id="main">
+
+  <!-- 1. HERO -->
+  <section class="hero" id="top" aria-labelledby="hero-title" data-hero>
+    <div class="hero__stage" data-hero-stage>
+      <picture class="hero__poster">
+        <source media="(max-width: 899px)" srcset="assets/img/hero-narrow-sm.webp 600w, assets/img/hero-narrow.webp 1200w" sizes="100vw" width="1200" height="800">
+        <img src="assets/img/hero-wide.webp" srcset="assets/img/hero-wide-sm.webp 1200w, assets/img/hero-wide.webp 2400w" sizes="100vw" width="2400" height="1350" alt="Концепт-купе цвета шалфея в тёмной студии, по кузову тянутся отражения софтбоксов" fetchpriority="high" decoding="async">
+      </picture>
+      <canvas class="hero__canvas" aria-hidden="true" data-hero-canvas></canvas>
+    </div>
+
+    <div class="wrap hero__head">
+      <p class="eyebrow hero__eyebrow">Студия детейлинга и&nbsp;защиты кузова</p>
+      <h1 class="hero__title" id="hero-title">
+        <span class="line"><span>Поверхность</span></span>
+        <span class="line"><span>решает всё.</span></span>
+      </h1>
+    </div>
+
+    <div class="wrap hero__body">
+      <p class="hero__lead">Мойка, полировка, защитные покрытия, плёнка и&nbsp;уход за&nbsp;салоном. Сначала смотрим на&nbsp;кузов под направленным светом, потом предлагаем работу и&nbsp;объясняем, что она даст.</p>
+      <div class="hero__actions">
+        <a class="btn btn--lime" href="#finder">Подобрать услугу<span class="btn__arrow" aria-hidden="true"></span></a>
+        <a class="btn btn--ghost" href="#works">Смотреть работы</a>
+      </div>
+    </div>
+
+    <div class="wrap hero__foot">
+      <ul class="hero__services" aria-label="Направления работы">
+        <li><a href="#service-wash" data-open-service="wash">Детейлинг-мойка</a></li>
+        <li><a href="#service-polish" data-open-service="polish">Полировка</a></li>
+        <li><a href="#service-coating" data-open-service="coating">Защитные покрытия</a></li>
+        <li><a href="#service-film" data-open-service="film">Защитная плёнка</a></li>
+        <li><a href="#service-interior" data-open-service="interior">Салон</a></li>
+      </ul>
+      <p class="hero__hint" data-hero-hint hidden>
+        <span class="hero__hint-dot" aria-hidden="true"></span>
+        Ведите курсором: свет пройдёт по&nbsp;кузову, как лампа мастера при осмотре.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. SERVICES -->
+  <section class="section services" id="services" aria-labelledby="services-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Услуги</p>
+        <h2 class="section-title" id="services-title" data-reveal>От&nbsp;мойки до&nbsp;защиты</h2>
+        <p class="section-lead" data-reveal>Каждая работа решает свою задачу. Часто они идут по&nbsp;порядку: мойка и&nbsp;подготовка, затем полировка, затем защита. Ниже — что входит в&nbsp;каждую и&nbsp;от&nbsp;чего зависит цена.</p>
+      </div>
+
+      <div class="services__layout">
+        <div class="services__list" data-services>
+
+          <article class="service is-open" id="service-wash" data-service="wash">
+            <h3 class="service__heading">
+              <button class="service__toggle" type="button" id="service-wash-btn" aria-expanded="true" aria-controls="service-wash-panel">
+                <span class="service__name">Детейлинг-мойка</span>
+                <span class="service__price">от&nbsp;4&nbsp;500&nbsp;₽<sup>*</sup></span>
+                <span class="service__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="service__panel" id="service-wash-panel" role="region" aria-labelledby="service-wash-btn">
+              <div class="service__panel-inner">
+                <figure class="service__media-inline">
+                  <img src="assets/img/service-wash-sm.webp" srcset="assets/img/service-wash-sm.webp 500w, assets/img/service-wash.webp 1000w" sizes="(max-width: 899px) 92vw, 1px" width="1000" height="1250" loading="lazy" decoding="async" alt="Колёсный диск и арка крупным планом">
+                </figure>
+                <p class="service__desc">Бережная многоэтапная мойка кузова, дисков и&nbsp;проёмов. Без абразивных губок и&nbsp;щёток, которые оставляют на&nbsp;лаке круговые царапины.</p>
+                <h4 class="service__sub">Что входит</h4>
+                <ul class="service__includes">
+                  <li>Бесконтактная предварительная мойка пеной</li>
+                  <li>Ручная мойка методом двух вёдер</li>
+                  <li>Очистка дисков, колёсных арок и&nbsp;дверных проёмов</li>
+                  <li>Сушка микрофиброй и&nbsp;воздухом</li>
+                </ul>
+                <p class="service__price-note">Цена зависит от&nbsp;размера автомобиля и&nbsp;степени загрязнения.</p>
+                <a class="link-cta" href="#contact" data-pick-service="Детейлинг-мойка">Оставить заявку на&nbsp;мойку<span class="btn__arrow" aria-hidden="true"></span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service" id="service-polish" data-service="polish">
+            <h3 class="service__heading">
+              <button class="service__toggle" type="button" id="service-polish-btn" aria-expanded="false" aria-controls="service-polish-panel">
+                <span class="service__name">Полировка кузова</span>
+                <span class="service__price">от&nbsp;18&nbsp;000&nbsp;₽<sup>*</sup></span>
+                <span class="service__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="service__panel" id="service-polish-panel" role="region" aria-labelledby="service-polish-btn">
+              <div class="service__panel-inner">
+                <figure class="service__media-inline">
+                  <img src="assets/img/service-polish-sm.webp" srcset="assets/img/service-polish-sm.webp 500w, assets/img/service-polish.webp 1000w" sizes="(max-width: 899px) 92vw, 1px" width="1000" height="1250" loading="lazy" decoding="async" alt="Передняя часть графитового кузова с чёткими отражениями студийного света">
+                </figure>
+                <p class="service__desc">Убирает мелкие царапины, голограммы и&nbsp;помутнение лака, возвращает глубину цвета. Сколько снимать, решаем по&nbsp;замерам толщины покрытия.</p>
+                <h4 class="service__sub">Что входит</h4>
+                <ul class="service__includes">
+                  <li>Замер толщины лакокрасочного покрытия по&nbsp;всем панелям</li>
+                  <li>Глубокая мойка и&nbsp;очистка лака глиной</li>
+                  <li>Абразивная полировка в&nbsp;один или несколько этапов</li>
+                  <li>Финишная доводка и&nbsp;проверка под светом разной температуры</li>
+                </ul>
+                <p class="service__price-note">Цена зависит от&nbsp;размера автомобиля, твёрдости лака и&nbsp;числа этапов.</p>
+                <a class="link-cta" href="#contact" data-pick-service="Полировка кузова">Оставить заявку на&nbsp;полировку<span class="btn__arrow" aria-hidden="true"></span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service" id="service-coating" data-service="coating">
+            <h3 class="service__heading">
+              <button class="service__toggle" type="button" id="service-coating-btn" aria-expanded="false" aria-controls="service-coating-panel">
+                <span class="service__name">Защитные покрытия</span>
+                <span class="service__price">от&nbsp;22&nbsp;000&nbsp;₽<sup>*</sup></span>
+                <span class="service__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="service__panel" id="service-coating-panel" role="region" aria-labelledby="service-coating-btn">
+              <div class="service__panel-inner">
+                <figure class="service__media-inline">
+                  <img src="assets/img/service-coating-sm.webp" srcset="assets/img/service-coating-sm.webp 500w, assets/img/service-coating.webp 1000w" sizes="(max-width: 899px) 92vw, 1px" width="1000" height="1250" loading="lazy" decoding="async" alt="Задняя часть кузова цвета шалфея с глянцевыми отражениями">
+                </figure>
+                <p class="service__desc">Керамические и&nbsp;полимерные составы создают на&nbsp;лаке тонкий защитный слой. Кузов меньше удерживает грязь, его проще мыть, а&nbsp;результат полировки сохраняется дольше.</p>
+                <h4 class="service__sub">Что входит</h4>
+                <ul class="service__includes">
+                  <li>Подготовка: мойка, очистка и&nbsp;обезжиривание поверхности</li>
+                  <li>Нанесение состава по&nbsp;панелям, в&nbsp;один или несколько слоёв</li>
+                  <li>Выдержка автомобиля в&nbsp;боксе на&nbsp;время отверждения</li>
+                  <li>Рекомендации по&nbsp;мойке и&nbsp;уходу после нанесения</li>
+                </ul>
+                <p class="service__price-note">Цена зависит от&nbsp;состава, числа слоёв и&nbsp;того, нужна ли полировка перед нанесением.</p>
+                <a class="link-cta" href="#contact" data-pick-service="Защитные покрытия">Оставить заявку на&nbsp;покрытие<span class="btn__arrow" aria-hidden="true"></span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service" id="service-film" data-service="film">
+            <h3 class="service__heading">
+              <button class="service__toggle" type="button" id="service-film-btn" aria-expanded="false" aria-controls="service-film-panel">
+                <span class="service__name">Защитная плёнка</span>
+                <span class="service__price service__price--text">Индивидуальный расчёт</span>
+                <span class="service__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="service__panel" id="service-film-panel" role="region" aria-labelledby="service-film-btn">
+              <div class="service__panel-inner">
+                <figure class="service__media-inline">
+                  <img src="assets/img/service-film-sm.webp" srcset="assets/img/service-film-sm.webp 500w, assets/img/service-film.webp 1000w" sizes="(max-width: 899px) 92vw, 1px" width="1000" height="1250" loading="lazy" decoding="async" alt="Передний угол кузова с сатиновой поверхностью и линией фары">
+                </figure>
+                <p class="service__desc">Полиуретановая плёнка принимает на&nbsp;себя сколы от&nbsp;камней и&nbsp;мелкие царапины. Можно закрыть только зоны риска или весь кузов, в&nbsp;глянце или в&nbsp;сатине.</p>
+                <h4 class="service__sub">Что входит</h4>
+                <ul class="service__includes">
+                  <li>Выбор зон: капот, бампер, фары, пороги или кузов целиком</li>
+                  <li>Подготовка поверхности, при необходимости — лёгкая полировка</li>
+                  <li>Раскрой по&nbsp;лекалам или по&nbsp;месту</li>
+                  <li>Оклейка с&nbsp;заворотом кромок там, где позволяет конструкция</li>
+                </ul>
+                <p class="service__price-note">Стоимость зависит от&nbsp;выбранных зон, типа плёнки и&nbsp;сложности деталей, поэтому считаем её индивидуально.</p>
+                <a class="link-cta" href="#contact" data-pick-service="Защитная плёнка">Оставить заявку на&nbsp;оклейку<span class="btn__arrow" aria-hidden="true"></span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="service" id="service-interior" data-service="interior">
+            <h3 class="service__heading">
+              <button class="service__toggle" type="button" id="service-interior-btn" aria-expanded="false" aria-controls="service-interior-panel">
+                <span class="service__name">Уход за&nbsp;салоном</span>
+                <span class="service__price">от&nbsp;9&nbsp;000&nbsp;₽<sup>*</sup></span>
+                <span class="service__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="service__panel" id="service-interior-panel" role="region" aria-labelledby="service-interior-btn">
+              <div class="service__panel-inner">
+                <figure class="service__media-inline">
+                  <img src="assets/img/service-interior-sm.webp" srcset="assets/img/service-interior-sm.webp 500w, assets/img/service-interior.webp 1000w" sizes="(max-width: 899px) 92vw, 1px" width="1000" height="1250" loading="lazy" decoding="async" alt="Кожаные сиденья цвета коньяка в открытом салоне">
+                </figure>
+                <p class="service__desc">Чистка и&nbsp;защита кожи, текстиля и&nbsp;пластика. Средства подбираем под материал каждой поверхности, чтобы не&nbsp;пересушить кожу и&nbsp;не&nbsp;оставить жирного блеска.</p>
+                <h4 class="service__sub">Что входит</h4>
+                <ul class="service__includes">
+                  <li>Сухая уборка и&nbsp;чистка труднодоступных мест</li>
+                  <li>Химчистка сидений, ковров и&nbsp;потолка</li>
+                  <li>Очистка и&nbsp;пропитка кожи</li>
+                  <li>Обработка пластика с&nbsp;матовым защитным составом</li>
+                </ul>
+                <p class="service__price-note">Цена зависит от&nbsp;размера салона, материалов отделки и&nbsp;степени загрязнения.</p>
+                <a class="link-cta" href="#contact" data-pick-service="Уход за салоном">Оставить заявку на&nbsp;салон<span class="btn__arrow" aria-hidden="true"></span></a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="services__media" aria-hidden="true">
+          <div class="services__frame">
+            <img data-service-img="wash" class="is-active" src="assets/img/service-wash.webp" width="1000" height="1250" alt="" decoding="async" loading="lazy">
+            <img data-service-img="polish" src="assets/img/service-polish.webp" width="1000" height="1250" alt="" decoding="async" loading="lazy">
+            <img data-service-img="coating" src="assets/img/service-coating.webp" width="1000" height="1250" alt="" decoding="async" loading="lazy">
+            <img data-service-img="film" src="assets/img/service-film.webp" width="1000" height="1250" alt="" decoding="async" loading="lazy">
+            <img data-service-img="interior" src="assets/img/service-interior.webp" width="1000" height="1250" alt="" decoding="async" loading="lazy">
+          </div>
+          <p class="services__caption">Иллюстрации — 3D-визуализации, а&nbsp;не&nbsp;фотографии работ студии.</p>
+        </div>
+      </div>
+
+      <p class="footnote"><sup>*</sup> Цены демонстрационные и&nbsp;не&nbsp;являются офертой. Точную стоимость называем после осмотра автомобиля и&nbsp;до&nbsp;начала работ.</p>
+    </div>
+  </section>
+
+  <!-- 3. BEFORE / AFTER -->
+  <section class="section compare" id="compare" aria-labelledby="compare-title">
+    <div class="wrap compare__grid">
+      <div class="compare__text">
+        <p class="eyebrow">До и после</p>
+        <h2 class="section-title" id="compare-title" data-reveal>Под светом видно всё</h2>
+        <p class="compare__lead" data-reveal>Мелкие круговые царапины, их называют голограммами или паутиной, появляются от&nbsp;мойки грязной губкой, щётками и&nbsp;сухой тряпкой. На&nbsp;солнце и&nbsp;под лампой они собираются в&nbsp;кольца вокруг источника света. Полировка выравнивает верхний слой лака, и&nbsp;отражение снова становится чётким.</p>
+        <dl class="compare__facts" data-reveal>
+          <div>
+            <dt>Отражение</dt>
+            <dd>Край софтбокса на&nbsp;панели снова ровный, без светлого ореола.</dd>
+          </div>
+          <div>
+            <dt>Глубина цвета</dt>
+            <dd>Тёмный лак выглядит чёрным, а&nbsp;не&nbsp;серым от&nbsp;рассеянного света.</dd>
+          </div>
+          <div>
+            <dt>Предел</dt>
+            <dd>Убираем дефекты в&nbsp;пределах толщины лака. Глубокие царапины до&nbsp;грунта полировкой не&nbsp;исправить, это видно на&nbsp;осмотре.</dd>
+          </div>
+        </dl>
+      </div>
+
+      <figure class="compare__figure" data-reveal="media">
+        <div class="ba" data-ba>
+          <img class="ba__img" src="assets/img/compare-after.webp" srcset="assets/img/compare-after-sm.webp 1000w, assets/img/compare-after.webp 2000w" sizes="(max-width: 899px) 100vw, 62vw" width="2000" height="1200" alt="После полировки: чёткое отражение софтбокса и лампы на чёрной панели двери" loading="lazy" decoding="async" draggable="false">
+          <div class="ba__before" data-ba-before>
+            <img class="ba__img" src="assets/img/compare-before.webp" srcset="assets/img/compare-before-sm.webp 1000w, assets/img/compare-before.webp 2000w" sizes="(max-width: 899px) 100vw, 62vw" width="2000" height="1200" alt="До полировки: та же панель, отражение размыто, вокруг лампы сетка круговых царапин" loading="lazy" decoding="async" draggable="false">
+          </div>
+          <span class="ba__label ba__label--before" aria-hidden="true">До</span>
+          <span class="ba__label ba__label--after" aria-hidden="true">После</span>
+          <div class="ba__divider" data-ba-divider aria-hidden="true"></div>
+          <div class="ba__handle" data-ba-handle role="slider" tabindex="0"
+               aria-label="Сравнение до и после: граница между изображениями"
+               aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"
+               aria-valuetext="50 процентов: слева до полировки, справа после">
+            <span class="ba__knob" aria-hidden="true"></span>
+          </div>
+        </div>
+        <figcaption class="figcaption">Демонстрационная визуализация: одна и&nbsp;та&nbsp;же 3D-сцена, слева лак с&nbsp;голограммами и&nbsp;помутнением, справа — после полировки. Это не&nbsp;фотография реального автомобиля. Перетащите границу или используйте стрелки на&nbsp;клавиатуре.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 4. APPROACH -->
+  <section class="section approach theme-ivory" id="approach" aria-labelledby="approach-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Подход</p>
+        <h2 class="section-title" id="approach-title" data-reveal>Сначала смотрим, потом предлагаем</h2>
+        <p class="section-lead" data-reveal>Работа начинается с&nbsp;осмотра. Так мы не&nbsp;делаем лишнего и&nbsp;заранее говорим, какой результат реален для конкретного автомобиля.</p>
+      </div>
+      <ol class="steps" data-steps>
+        <li class="step" data-reveal>
+          <span class="step__num" aria-hidden="true">01</span>
+          <h3 class="step__title">Осмотр</h3>
+          <p>Смотрим автомобиль при дневном и&nbsp;направленном свете, замеряем толщину покрытия, отмечаем сколы и&nbsp;проблемные зоны. Спрашиваем, как вы пользуетесь машиной и&nbsp;чего ждёте.</p>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step__num" aria-hidden="true">02</span>
+          <h3 class="step__title">Подбор</h3>
+          <p>Предлагаем одну или несколько процедур и&nbsp;объясняем, что даст каждая. Называем стоимость и&nbsp;срок до&nbsp;начала работ. Если задачу можно решить проще, говорим об&nbsp;этом.</p>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step__num" aria-hidden="true">03</span>
+          <h3 class="step__title">Работа</h3>
+          <p>Готовим поверхность: мойка, очистка, обезжиривание, защита уплотнителей и&nbsp;пластика. Затем выполняем согласованные работы в&nbsp;закрытом боксе.</p>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step__num" aria-hidden="true">04</span>
+          <h3 class="step__title">Проверка</h3>
+          <p>Проверяем результат под светом разной температуры, вместе с&nbsp;вами осматриваем автомобиль и&nbsp;объясняем, как ухаживать за&nbsp;ним дальше.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 5. WORKS -->
+  <section class="section works" id="works" aria-labelledby="works-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Работы</p>
+        <h2 class="section-title" id="works-title" data-reveal>Как может выглядеть результат</h2>
+        <p class="section-lead" data-reveal>Примеры ниже — визуализации на&nbsp;3D-модели концепт-кара. Они показывают характер результата, но&nbsp;не&nbsp;являются заказами студии. В&nbsp;рабочей версии сайта здесь будут фотографии реальных автомобилей.</p>
+      </div>
+
+      <div class="works__grid">
+        <article class="work work--wide" data-reveal="media">
+          <div class="work__media" data-light>
+            <img src="assets/img/work-graphite-sm.webp" srcset="assets/img/work-graphite-sm.webp 880w, assets/img/work-graphite.webp 1760w" sizes="(max-width: 899px) 92vw, 60vw" width="1760" height="1100" loading="lazy" decoding="async" alt="Графитовое купе в три четверти спереди, по борту ровные линии отражений">
+          </div>
+          <div class="work__body">
+            <p class="work__meta"><span class="tag">Полировка</span><span>Концепт-купе, 3D-визуализация</span></p>
+            <h3 class="work__title">Глубокий графит</h3>
+            <p class="work__text">Восстановительная полировка тёмного лака. Цель — отражения без голограмм и&nbsp;ореолов: линии студийного света проходят по&nbsp;борту, не&nbsp;расплываясь.</p>
+          </div>
+        </article>
+
+        <article class="work work--tall" data-reveal="media">
+          <div class="work__media" data-light>
+            <img src="assets/img/work-ivory-sm.webp" srcset="assets/img/work-ivory-sm.webp 450w, assets/img/work-ivory.webp 900w" sizes="(max-width: 899px) 92vw, 30vw" width="900" height="1125" loading="lazy" decoding="async" alt="Купе цвета слоновой кости, вид сзади в три четверти">
+          </div>
+          <div class="work__body">
+            <p class="work__meta"><span class="tag">Плёнка</span><span>Концепт-купе, 3D-визуализация</span></p>
+            <h3 class="work__title">Слоновая кость</h3>
+            <p class="work__text">Полная оклейка глянцевой полиуретановой плёнкой. Светлый цвет остаётся ровным, а&nbsp;сколы от&nbsp;камней приходятся на&nbsp;плёнку.</p>
+          </div>
+        </article>
+
+        <article class="work work--tall" data-reveal="media">
+          <div class="work__media" data-light>
+            <img src="assets/img/work-satin-sm.webp" srcset="assets/img/work-satin-sm.webp 450w, assets/img/work-satin.webp 900w" sizes="(max-width: 899px) 92vw, 30vw" width="900" height="1125" loading="lazy" decoding="async" alt="Купе с сатиновой поверхностью кузова, вид сверху спереди">
+          </div>
+          <div class="work__body">
+            <p class="work__meta"><span class="tag">Плёнка</span><span>Концепт-купе, 3D-визуализация</span></p>
+            <h3 class="work__title">Сатиновый графит</h3>
+            <p class="work__text">Сатиновая плёнка делает поверхность мягко-матовой без перекраски кузова. Свет ложится широкими пятнами, форма читается иначе, чем в&nbsp;глянце.</p>
+          </div>
+        </article>
+
+        <article class="work work--wide" data-reveal="media">
+          <div class="work__media" data-light>
+            <img src="assets/img/work-sage-sm.webp" srcset="assets/img/work-sage-sm.webp 880w, assets/img/work-sage.webp 1760w" sizes="(max-width: 899px) 92vw, 60vw" width="1760" height="1100" loading="lazy" decoding="async" alt="Купе цвета шалфея в профиль, металлик под глянцевым слоем">
+          </div>
+          <div class="work__body">
+            <p class="work__meta"><span class="tag">Покрытие</span><span>Концепт-купе, 3D-визуализация</span></p>
+            <h3 class="work__title">Шалфей и&nbsp;керамика</h3>
+            <p class="work__text">Лёгкая полировка и&nbsp;керамическое покрытие. Задача — сохранить глубину металлика и&nbsp;сделать регулярную мойку проще.</p>
+          </div>
+        </article>
+
+        <article class="work work--pano" data-reveal="media">
+          <div class="work__media" data-light>
+            <img src="assets/img/work-interior-sm.webp" srcset="assets/img/work-interior-sm.webp 1200w, assets/img/work-interior.webp 2400w" sizes="(max-width: 899px) 92vw, 90vw" width="2400" height="1030" loading="lazy" decoding="async" alt="Купе с поднятой дверью, видны кожаные сиденья цвета коньяка">
+          </div>
+          <div class="work__body work__body--row">
+            <div>
+              <p class="work__meta"><span class="tag">Салон</span><span>Концепт-купе, 3D-визуализация</span></p>
+              <h3 class="work__title">Кожа цвета коньяка</h3>
+            </div>
+            <p class="work__text">Очистка и&nbsp;пропитка кожи, химчистка текстиля, матовая обработка пластика. Салон выглядит ухоженным, без пересушенной кожи и&nbsp;лишнего блеска.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. FINDER -->
+  <section class="section finder" id="finder" aria-labelledby="finder-title">
+    <div class="wrap">
+      <div class="finder__panel">
+        <div class="finder__intro">
+          <p class="eyebrow">Подбор</p>
+          <h2 class="section-title" id="finder-title">С&nbsp;чего начать?</h2>
+          <p>Ответьте на&nbsp;два вопроса, и&nbsp;мы покажем подходящее направление и&nbsp;то, что нужно уточнить перед расчётом. Это ориентир, а&nbsp;не&nbsp;смета.</p>
+        </div>
+
+        <form class="finder__form" data-finder aria-describedby="finder-note">
+          <fieldset class="q">
+            <legend class="q__legend"><span class="q__n" aria-hidden="true">1</span>Какая задача сейчас главная?</legend>
+            <div class="choices">
+              <label class="choice">
+                <input type="radio" name="goal" value="look" checked>
+                <span class="choice__body"><span class="choice__title">Улучшить внешний вид кузова</span><span class="choice__hint">Убрать потёртости, вернуть блеск</span></span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="goal" value="protect">
+                <span class="choice__body"><span class="choice__title">Защитить лакокрасочное покрытие</span><span class="choice__hint">От&nbsp;сколов, реагентов и&nbsp;мойки</span></span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="goal" value="interior">
+                <span class="choice__body"><span class="choice__title">Привести в&nbsp;порядок салон</span><span class="choice__hint">Кожа, текстиль, пластик</span></span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="goal" value="complex">
+                <span class="choice__body"><span class="choice__title">Комплексный уход</span><span class="choice__hint">Кузов и&nbsp;салон за&nbsp;один визит</span></span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="q">
+            <legend class="q__legend"><span class="q__n" aria-hidden="true">2</span><span data-q2-title>В&nbsp;каком состоянии кузов?</span></legend>
+            <div class="choices choices--compact" data-q2>
+              <label class="choice choice--compact"><input type="radio" name="state" value="new"><span class="choice__body"><span class="choice__title">Новый или почти новый</span></span></label>
+              <label class="choice choice--compact"><input type="radio" name="state" value="light" checked><span class="choice__body"><span class="choice__title">Есть мелкие царапины и&nbsp;потёртости</span></span></label>
+              <label class="choice choice--compact"><input type="radio" name="state" value="heavy"><span class="choice__body"><span class="choice__title">Заметные дефекты, тусклый цвет</span></span></label>
+            </div>
+          </fieldset>
+        </form>
+
+        <div class="finder__result" data-finder-result aria-live="polite">
+          <p class="result__label">Подходит</p>
+          <h3 class="result__title" data-r-title>Полировка кузова</h3>
+          <p class="result__text" data-r-text>Мелкие царапины и&nbsp;потёртости обычно убираются полировкой в&nbsp;один-два этапа. После неё стоит подумать о&nbsp;защитном покрытии, чтобы результат держался дольше.</p>
+          <p class="result__sub">Перед расчётом уточним</p>
+          <ul class="result__list" data-r-list>
+            <li>Марку, модель и&nbsp;размер автомобиля</li>
+            <li>Толщину лака по&nbsp;замерам на&nbsp;осмотре</li>
+            <li>Нужна ли защита после полировки</li>
+          </ul>
+          <p class="result__note" id="finder-note">Стоимость называем после осмотра. Ориентиры по&nbsp;ценам — в&nbsp;разделе <a href="#services">«Услуги»</a>.</p>
+          <a class="btn btn--lime" href="#contact" data-finder-apply>Оставить заявку с&nbsp;этим выбором<span class="btn__arrow" aria-hidden="true"></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FAQ -->
+  <section class="section faq theme-ivory" id="faq" aria-labelledby="faq-title">
+    <div class="wrap faq__grid">
+      <div class="faq__head">
+        <p class="eyebrow">Вопросы</p>
+        <h2 class="section-title" id="faq-title" data-reveal>Частые вопросы</h2>
+        <p class="section-lead" data-reveal>Если ответа здесь нет, напишите вопрос в&nbsp;комментарии к&nbsp;заявке.</p>
+      </div>
+      <div class="faq__list" data-faq>
+        <div class="faq-item">
+          <h3 class="faq-item__heading">
+            <button class="faq-item__q" type="button" id="faq-1-btn" aria-expanded="true" aria-controls="faq-1">Чем полировка отличается от&nbsp;защитного покрытия?<span class="faq-item__icon" aria-hidden="true"></span></button>
+          </h3>
+          <div class="faq-item__a" id="faq-1" role="region" aria-labelledby="faq-1-btn">
+            <div class="faq-item__inner"><p>Полировка — механическая обработка: она снимает микроскопический слой лака и&nbsp;выравнивает поверхность, поэтому убирает мелкие царапины и&nbsp;голограммы. Защитное покрытие ничего не&nbsp;исправляет. Это тонкий слой поверх лака, который помогает дольше сохранить его состояние и&nbsp;упрощает мойку. Поэтому покрытие обычно наносят после полировки, а&nbsp;не&nbsp;вместо неё.</p></div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-item__heading">
+            <button class="faq-item__q" type="button" id="faq-2-btn" aria-expanded="false" aria-controls="faq-2">Как выбирается подходящая процедура?<span class="faq-item__icon" aria-hidden="true"></span></button>
+          </h3>
+          <div class="faq-item__a" id="faq-2" role="region" aria-labelledby="faq-2-btn">
+            <div class="faq-item__inner"><p>По&nbsp;результатам осмотра. Смотрим кузов под направленным светом, замеряем толщину покрытия, обсуждаем, где хранится и&nbsp;как часто моется автомобиль, и&nbsp;чего вы ждёте от&nbsp;результата. Если задачу можно решить проще и&nbsp;дешевле, предложим этот вариант.</p></div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-item__heading">
+            <button class="faq-item__q" type="button" id="faq-3-btn" aria-expanded="false" aria-controls="faq-3">Сколько времени занимает работа?<span class="faq-item__icon" aria-hidden="true"></span></button>
+          </h3>
+          <div class="faq-item__a" id="faq-3" role="region" aria-labelledby="faq-3-btn">
+            <div class="faq-item__inner"><p>Зависит от&nbsp;услуги, размера автомобиля и&nbsp;состояния покрытия. Некоторым составам нужно время на&nbsp;отверждение, поэтому автомобиль может остаться в&nbsp;студии дольше, чем длится сама работа. Срок называем после осмотра, до&nbsp;начала работ, и&nbsp;предупреждаем, если он меняется.</p></div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-item__heading">
+            <button class="faq-item__q" type="button" id="faq-4-btn" aria-expanded="false" aria-controls="faq-4">Как ухаживать за&nbsp;автомобилем после обработки?<span class="faq-item__icon" aria-hidden="true"></span></button>
+          </h3>
+          <div class="faq-item__a" id="faq-4" role="region" aria-labelledby="faq-4-btn">
+            <div class="faq-item__inner"><p>После нанесения покрытия первое время лучше не&nbsp;мыть автомобиль и&nbsp;не&nbsp;использовать агрессивную химию. Точный срок зависит от&nbsp;состава, его называем при выдаче. Дальше подойдёт ручная мойка мягким шампунем и&nbsp;чистой микрофиброй. Щётки автоматических моек быстрее всего возвращают голограммы, поэтому их лучше избегать.</p></div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-item__heading">
+            <button class="faq-item__q" type="button" id="faq-5-btn" aria-expanded="false" aria-controls="faq-5">От&nbsp;чего зависит стоимость?<span class="faq-item__icon" aria-hidden="true"></span></button>
+          </h3>
+          <div class="faq-item__a" id="faq-5" role="region" aria-labelledby="faq-5-btn">
+            <div class="faq-item__inner"><p>От&nbsp;размера автомобиля, состояния покрытия, выбранных материалов и&nbsp;объёма работы. Например, полировка сильно изношенного лака требует больше этапов, а&nbsp;плёнку можно нанести на&nbsp;отдельные зоны или на&nbsp;весь кузов. Цены на&nbsp;этом сайте демонстрационные; точную стоимость называем после осмотра.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. CONTACT -->
+  <section class="section contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact__grid">
+      <div class="contact__intro">
+        <p class="eyebrow">Заявка</p>
+        <h2 class="section-title" id="contact-title" data-reveal>Расскажите об&nbsp;автомобиле</h2>
+        <p class="section-lead" data-reveal>Оставьте контакты и&nbsp;задачу. Мы свяжемся, чтобы договориться об&nbsp;осмотре и&nbsp;уточнить детали.</p>
+        <div class="contact__details">
+          <p class="demo-badge">Демонстрационные контакты</p>
+          <dl class="contact__list">
+            <div><dt>Почта</dt><dd><span data-studio-email>hello@forme.example</span></dd></div>
+            <div><dt>Телефон</dt><dd>+7 (000) 000-00-00</dd></div>
+            <div><dt>Приём</dt><dd>По&nbsp;предварительной записи</dd></div>
+            <div><dt>Адрес</dt><dd>Указывается перед запуском сайта</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="contact__card">
+        <form class="form" novalidate data-form aria-describedby="form-note">
+          <div class="field" data-field="name">
+            <label class="field__label" for="f-name">Имя</label>
+            <input class="input" id="f-name" name="name" type="text" autocomplete="name" maxlength="60" required aria-describedby="f-name-err">
+            <p class="field__error" id="f-name-err" data-error hidden></p>
+          </div>
+
+          <fieldset class="field" data-field="contact">
+            <legend class="field__label">Как с&nbsp;вами связаться</legend>
+            <div class="segmented">
+              <label class="segmented__opt"><input type="radio" name="method" value="phone" checked><span>Телефон</span></label>
+              <label class="segmented__opt"><input type="radio" name="method" value="telegram"><span>Telegram</span></label>
+              <label class="segmented__opt"><input type="radio" name="method" value="email"><span>E-mail</span></label>
+            </div>
+            <label class="visually-hidden" for="f-contact" data-contact-label>Номер телефона</label>
+            <input class="input" id="f-contact" name="contact" type="tel" inputmode="tel" autocomplete="tel" maxlength="64" placeholder="+7 900 000-00-00" required aria-describedby="f-contact-hint f-contact-err">
+            <p class="field__hint" id="f-contact-hint" data-contact-hint>Перезвоним или напишем на&nbsp;этот номер.</p>
+            <p class="field__error" id="f-contact-err" data-error hidden></p>
+          </fieldset>
+
+          <div class="field" data-field="service">
+            <label class="field__label" for="f-service">Интересующая услуга</label>
+            <div class="select">
+              <select class="input" id="f-service" name="service" required aria-describedby="f-service-err">
+                <option value="">Выберите услугу</option>
+                <option>Детейлинг-мойка</option>
+                <option>Полировка кузова</option>
+                <option>Защитные покрытия</option>
+                <option>Защитная плёнка</option>
+                <option>Уход за салоном</option>
+                <option>Комплексный уход</option>
+                <option>Пока не знаю, нужна консультация</option>
+              </select>
+            </div>
+            <p class="field__error" id="f-service-err" data-error hidden></p>
+          </div>
+
+          <div class="field" data-field="comment">
+            <label class="field__label" for="f-comment">Комментарий <span class="field__optional">необязательно</span></label>
+            <textarea class="input input--area" id="f-comment" name="comment" rows="4" maxlength="600" placeholder="Марка, модель, год. Что беспокоит в состоянии кузова или салона." aria-describedby="f-comment-count"></textarea>
+            <p class="field__counter" id="f-comment-count"><span data-counter>0</span> из 600 знаков</p>
+          </div>
+
+          <button class="btn btn--lime btn--block" type="submit">Подготовить заявку<span class="btn__arrow" aria-hidden="true"></span></button>
+          <p class="form__note" id="form-note">Это демо-версия: сервер не&nbsp;подключён, и&nbsp;данные никуда не&nbsp;отправляются. Из&nbsp;них соберётся готовое сообщение, которое можно скопировать и&nbsp;отправить студии.</p>
+        </form>
+
+        <div class="form-done" data-form-done tabindex="-1" hidden>
+          <p class="eyebrow eyebrow--lime">Сообщение готово</p>
+          <h3 class="form-done__title">Заявка подготовлена, но&nbsp;ещё не&nbsp;отправлена</h3>
+          <p class="form-done__text">На&nbsp;демо-сайте нет сервера для приёма заявок. Скопируйте текст и&nbsp;отправьте его студии удобным способом.</p>
+          <label class="visually-hidden" for="f-message">Текст заявки</label>
+          <textarea class="input input--area form-done__message" id="f-message" rows="8" readonly data-message></textarea>
+          <div class="form-done__actions">
+            <button class="btn btn--lime" type="button" data-copy>Скопировать текст</button>
+            <a class="btn btn--ghost" href="mailto:hello@forme.example" data-mailto>Открыть в&nbsp;почте</a>
+            <button class="btn btn--text" type="button" data-edit>Изменить данные</button>
+          </div>
+          <p class="form-done__status" role="status" data-copy-status></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <div class="site-footer__brand">
+      <span class="brand__word">FORME</span>
+      <p>Концептуальная студия детейлинга и&nbsp;защиты кузова. Демонстрационный проект: цены, контакты и&nbsp;работы условные.</p>
+    </div>
+    <nav class="site-footer__nav" aria-label="Разделы сайта в подвале">
+      <a href="#services">Услуги</a>
+      <a href="#compare">До и после</a>
+      <a href="#approach">Подход</a>
+      <a href="#works">Работы</a>
+      <a href="#finder">Подбор</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#contact">Заявка</a>
+    </nav>
+    <div class="site-footer__credits">
+      <p>3D-модель «Car Concept»: Eric Chadwick, Darmstadt Graphics Group, <a href="https://creativecommons.org/licenses/by/4.0/deed.ru" rel="noopener" target="_blank">CC&nbsp;BY&nbsp;4.0</a>, из&nbsp;<a href="https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/CarConcept" rel="noopener" target="_blank">glTF Sample Assets</a>. Основа — модель Unity Fan (CC0). Изменены материалы, освещение и&nbsp;текстуры шин; логотипы удалены.</p>
+      <p>Шрифты Roboto Flex и&nbsp;Golos Text — SIL Open Font License. 3D-движок three.js — MIT.</p>
+    </div>
+    <a class="to-top" href="#top">Наверх<span class="to-top__arrow" aria-hidden="true"></span></a>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+<script type="module" src="js/hero.js"></script>
+</body>
+</html>
